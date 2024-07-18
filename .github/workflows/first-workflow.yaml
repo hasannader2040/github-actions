@@ -3,6 +3,10 @@ on:
   push:
     branches:
       - "main"
+  pull_request:
+    branches:
+      - "feature"
+    types: [opened, closed]
 
 jobs:
   first-workflow-job:
@@ -19,4 +23,3 @@ jobs:
       - name: list files after checkout
         run: ls
         shell: bash
-# last 
