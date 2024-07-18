@@ -1,0 +1,24 @@
+name: first workflow
+on:
+  push:
+    branches:
+      - "main"
+
+jobs:
+  first-workflow-job:
+    name: first job
+    runs-on: ubuntu-latest
+    steps:
+      - name: before checkout action
+        run: ls
+        shell: bash
+      
+      - name: checkout steps
+        uses: Action/cececkout@v3
+
+      - name: checkout steps
+        run: ls
+        shell: bash
+        # file
+
+
