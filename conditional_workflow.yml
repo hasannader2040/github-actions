@@ -1,0 +1,39 @@
+name: first workflow
+
+on:
+  # workflow_dispatch:
+  #   inputs:
+  #     versionName:
+  #       required: true
+  #       description: "This is the version for GitHub workflow"
+
+  push:
+  #   branches:
+  #     - "main"
+  #     - "feat/**"
+  #   paths:
+  #     - "app/**"
+
+      
+  # pull_request:
+  #   branches-ignore:
+  #     - "feat/**"
+  #   types: [opened, closed]
+
+
+jobs:
+  first-workflow-job:
+    name: first job
+    runs-on: ubuntu-latest
+    steps:
+      - name: before checkout action
+        if: github.ref == 'refs/head/feature'
+        run: ls
+        shell: bash
+
+      - name: checkout code
+        uses: actions/checkout@v3
+
+      - name: list files after checkout
+        run: ls
+        shell: bash
