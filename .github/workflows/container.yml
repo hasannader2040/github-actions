@@ -1,25 +1,17 @@
 name: first workflow
 
 on:
-# workflow_dispatch:
-# inputs:
-#     versionName:
-#     required: true
-#     description: "This is the version for GitHub workflow"
-
-push:
-  # branches:
-  #     - "main"
-  #     - "feat/**"
-  # paths:
-  #     - "app/**"
-
-  # pull_request:
-  # branches-ignore:
-  #     - "feat/**"
-  # types: [opened, closed]
-
-  workflow_dispatch:
+#   push:
+#     branches:
+#       - "main"
+#       - "feat/**"
+#     paths:
+#       - "app/**"
+#   pull_request:
+#     branches-ignore:
+#       - "feat/**"
+#     types: [opened, closed]
+#   workflow_dispatch:
 
 jobs:
   first-workflow-job:
