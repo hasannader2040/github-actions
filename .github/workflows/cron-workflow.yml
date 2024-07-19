@@ -1,12 +1,12 @@
-name: cron workflow
+# name: cron workflow
 
-on:
-  schedule:
-    # - cron: "0/5 * * * *"
-    # - cron: "0/20 * * * *"
+# on:
+#   schedule:
+#     # - cron: "0/5 * * * *"
+#     # - cron: "0/20 * * * *"
 
-jobs:
-  cron-workflow:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "cron workflow"
+# jobs:
+#   cron-workflow:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - run: echo "cron workflow"
