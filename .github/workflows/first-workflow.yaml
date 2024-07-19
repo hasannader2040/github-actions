@@ -14,12 +14,10 @@
 #     paths:
 #       - "app/**"
 
-
 #   pull_request:
 #     branches-ignore:
 #       - "feat/**"
 #     types: [opened, closed]
-
 
 # jobs:
 #   first-workflow-job:
@@ -37,8 +35,6 @@
 #         run: ls
 #         shell: bash
 
-
-
 name: first workflow
 
 on:
@@ -48,25 +44,13 @@ on:
         required: true
         description: "This is the version for GitHub workflow"
 
-  # push:
-  #   branches:
-  #     - "main"
-  #     - "feat/**"
-  #   paths:
-  #     - "app/**"
-
-  # pull_request:
-  #   branches-ignore:
-  #     - "feat/**"
-  #   types: [opened, closed]
-
 jobs:
   first-workflow-job:
     name: first job
     runs-on: ubuntu-latest
     steps:
       - name: before checkout action
-        if: github.ref == 'refs/heads/feature'
+        if: startsWith(github.ref, 'refs/heads/feature')
         run: ls
         shell: bash
 
