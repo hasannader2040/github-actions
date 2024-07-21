@@ -1,0 +1,19 @@
+#  Workflow 3: Trigger using repository_dispatch with type build
+
+name: Repository Dispatch Workflow
+
+on:
+  repository_dispatch:
+    types:
+      - build
+
+jobs:
+  repository-dispatch-job:
+    name: Repository Dispatch Job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run a command
+        run: echo "Repository dispatch event with type 'build' triggered this workflow"
