@@ -1,0 +1,19 @@
+# Workflow 1: Trigger on push event to the main branch
+
+name: Push to Main Workflow
+
+on:
+  push:
+    branches:
+      - "main"
+
+jobs:
+  push-main-job:
+    name: Push to Main Job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run a command
+        run: echo "Push event to the main branch triggered this workflow"
