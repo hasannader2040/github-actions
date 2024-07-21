@@ -1,0 +1,18 @@
+# Workflow 2: Trigger on pull request events
+# Create a file named pull-request.yml in the .github/workflows directory with the following content:
+
+name: Pull Request Workflow
+
+on:
+  pull_request:
+
+jobs:
+  pull-request-job:
+    name: Pull Request Job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run a command
+        run: echo "Pull request event triggered this workflow"
