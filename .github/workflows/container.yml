@@ -1,10 +1,11 @@
 name: first workflow
 
 on:
-#   push:
-#     branches:
-#       - "main"
-#       - "feat/**"
+  push:
+    branches:
+      - "main"
+      - "feat/**"
+
 #     paths:
 #       - "app/**"
 #   pull_request:

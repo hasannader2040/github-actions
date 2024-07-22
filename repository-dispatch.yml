@@ -3,17 +3,17 @@
 name: Repository Dispatch Workflow
 
 on:
-  repository_dispatch:
-    types:
-      - build
+  workflow_dispatch:
+    inputs:
+      versionName:
+        required: true
+        description: "This is the version for GitHub workflow di"
 
 jobs:
-  repository-dispatch-job:
-    name: Repository Dispatch Job
+  run_if_failure:
+    if: ${{ !github.event.client_payload.passed }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Run a command
-        run: echo "Repository dispatch event with type 'build' triggered this workflow"
+      - env:
+          MESSAGE: ${{ github.event.client_payload.message }}
+        run: echo $MESSAGE
