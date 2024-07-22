@@ -15,8 +15,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Navigate to project directory and build
+      - name: Build with Maven
         run: |
           echo "Push event to the main branch triggered this workflow"
-          mvn -f D:\oop java language\crapsGame\pom.xml clean package
+          mvn clean package
         shell: bash
